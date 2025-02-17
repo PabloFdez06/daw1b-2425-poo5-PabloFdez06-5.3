@@ -1,7 +1,7 @@
 class Telefono : EncendidoApagado, DispositivoElectronico {
 
 
-    override var estado: Boolean = true
+    var estado: Boolean = true
 
     override fun encender() {
         estado = true
@@ -14,6 +14,10 @@ class Telefono : EncendidoApagado, DispositivoElectronico {
     }
 
     override fun reiniciar() {
-        println("Teléfono reiniciado")
+        if (estado){
+            println("Teléfono reiniciado")
+        }else {
+            println("No puedes reiniciar el telefono apagado.")
+        }
     }
 }

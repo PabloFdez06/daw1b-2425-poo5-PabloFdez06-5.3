@@ -1,6 +1,6 @@
 interface Vehiculo {
 
-    var motorEncendido: EncendidoApagado
+    var motorEncendido: Boolean
     val kmHora: Int
 
     fun acelerar(num: Int) {

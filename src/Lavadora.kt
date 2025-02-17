@@ -1,6 +1,6 @@
 class Lavadora : EncendidoApagado {
 
-    override var estado: Boolean = true
+    var estado: Boolean = true
 
     override fun encender() {
         estado = true

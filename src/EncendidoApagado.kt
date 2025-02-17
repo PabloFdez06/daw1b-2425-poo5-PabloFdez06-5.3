@@ -1,6 +1,13 @@
 interface EncendidoApagado {
 
-    fun encender()
+    var estado: Boolean
 
-    fun apagar()
+    fun encender() {
+        estado = true
+    }
+
+
+    fun apagar() {
+        estado = false
+    }
 }

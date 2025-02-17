@@ -1,8 +1,9 @@
-class Coche : EncendidoApagado, Vehiculo {
+class Coche() : EncendidoApagado, Vehiculo {
 
-
+    override var estado: Boolean = false
 
     override fun encender() {
+        estado = true
         println("Encendiendo el vehiculo")
     }
 
@@ -10,19 +11,36 @@ class Coche : EncendidoApagado, Vehiculo {
         println("Apagando el vehiculo")
     }
 
-    override var kmHora: Double = 0.0
+    override var motorEncendido: EncendidoApagado
+        get() = TODO("Not yet implemented")
+        set(value) {}
+
+    override var kmHora: Int = 0
 
     override fun acelerar(num: Int) {
-        kmHora += num
+        if (estado) {
+            kmHora += num
+            println("Velocidad actualizada: $kmHora")
+        } else{
+            println("El motor debe estár encendido para acelerar")
+        }
     }
 
     override fun frenar(num: Int) {
-        kmHora -= num
+        if (estado) {
+            kmHora -= num
+            if (kmHora < 0) {
+                kmHora = 0
+                println("Velocidad actualizada: $kmHora")
+
+            } else {
+                println("Velocidad actualizada: $kmHora")
+
+            }
+        } else{
+            println("El motor debe estár encendido para acelerar")
+        }
     }
 
-    override lateinit var motorEncendido: EncendidoApagado
 
-    init {
-        motorEncendido =
-    }
 }

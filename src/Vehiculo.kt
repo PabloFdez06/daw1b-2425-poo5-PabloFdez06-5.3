@@ -1,10 +1,14 @@
 interface Vehiculo {
 
-    val motorEncendido: EncendidoApagado
-    val kmHora: Double
+    var motorEncendido: EncendidoApagado
+    val kmHora: Int
 
-    fun acelerar(num: Int) {}
+    fun acelerar(num: Int) {
+        motorEncendido
+    }
 
     fun frenar(num: Int) {}
+
+
 
 }
